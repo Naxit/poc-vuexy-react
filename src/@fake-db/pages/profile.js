@@ -3,8 +3,8 @@ const data = {
   profileData: {
     header: {
       avatar: require('@src/assets/images/portrait/small/avatar-s-2.jpg').default,
-      username: 'Kitty Allanson',
-      designation: 'UI/UX Designer',
+      username: 'Selina Kyle',
+      designation: '',
       coverImg: require('@src/assets/images/profile/user-uploads/timeline.jpg').default
     },
     userAbout: {
