@@ -2,6 +2,9 @@ import { Home, Circle } from 'react-feather'
 
 export default [
   {
+    header: '- - - - - - - SAMPLES - - - - - - -'
+  },
+  {
     id: 'dashboards',
     title: 'Dashboards',
     icon: <Home size={20} />,
