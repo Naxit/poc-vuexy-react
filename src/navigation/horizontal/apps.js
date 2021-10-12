@@ -30,6 +30,12 @@ export default [
         icon: <Calendar />,
         navLink: '/apps/calendar'
       },
+	  {
+		id: 'resource',
+		title: 'Liste des agents',
+		icon: <Circle />,
+		navLink: '/apps/resource/list'
+	  },
       {
         id: 'invoiceApp',
         title: 'Invoice',

@@ -73,6 +73,10 @@ const AppRoutes = [
     component: lazy(() => import('../../views/apps/calendar'))
   },
   {
+	  path: '/apps/resource/list',
+	  component: lazy(() => import('../../views/apps/resource/list'))
+  },
+  {
     path: '/apps/invoice/list',
     component: lazy(() => import('../../views/apps/invoice/list'))
   },
