@@ -13,13 +13,13 @@ export default [
 		    id: 'list',
 		    title: 'Liste des agents',
         icon: <Circle size={12} />,
-		    navLink: '/agents/list'
+		    navLink: '/resource/list'
       },
       {
 		    id: 'sheet',
 		    title: 'Fiche agent',
         icon: <Circle size={12} />,
-		    navLink: '/agents/sheet'
+		    navLink: '/resource/sheet'
       }
     ]
   }

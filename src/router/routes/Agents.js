@@ -3,12 +3,8 @@ import { lazy } from 'react'
 const AgentsRoutes = [
   // Agents
   {
-    path: '/agents/list',
-    component: lazy(() => import('../../views/agents/list'))
-  },
-  {
-    path: '/agents/sheet',
-    component: lazy(() => import('../../views/agents/sheet'))
+    path: '/resource/list',
+    component: lazy(() => import('../../views/apps/resource/list'))
   }
 ]
 
