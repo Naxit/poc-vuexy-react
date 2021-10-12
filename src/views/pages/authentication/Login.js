@@ -81,13 +81,8 @@ const Login = props => {
         </Link>
         <Col className='d-none d-lg-flex align-items-center p-5' lg='8' sm='12'>
           <div className='w-100 d-lg-flex align-items-center justify-content-center px-5'>
-            <div style={{
-              border: '1px solid hotpink',
-              height: '20rem',
-              width: '40rem',
-              	
-            }}>
-              <svg width="125.188" height="27.073" viewBox="0 0 125.188 27.073">
+            <div style={{ width: '40rem' }}>
+              <svg width="125.188" height="27.073" viewBox="0 0 125.188 27.073" style={{ height: 'auto', width: '100%' }}>
                 <defs>
                   <radialGradient id="radial-gradient" cx="0.315" cy="0.325" fx="-1.0678871870040894" r="1.411" gradientTransform="translate(0.01) scale(0.98 1)" gradientUnits="objectBoundingBox">
                     <stop offset="0" stop-color="#feeb17"/>
