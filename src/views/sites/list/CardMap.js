@@ -1,5 +1,6 @@
-import { Card, CardHeader, CardTitle, CardBody, Row, Col } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardText, CardBody, Row, Col } from 'reactstrap'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { Archive, PhoneForwarded, Mail } from 'react-feather'
 import L from 'leaflet'
 
 const CardMap = () => {
@@ -39,14 +40,70 @@ const CardMap = () => {
 					</MapContainer>
 				  </Col>
 				  <Col md="3">
-				  <p>Societe</p>
-				  <p>Secteur site</p>
-				  <p>responsable client</p>
-				 <p>email</p>
-				 <p>Tél/ Mobile</p>
-				 <p>Responsable d'exploitation</p>
-				 <p>E-mail</p>
-				 <p>Tél/ Mobile</p>
+					  <div className='user-info-title'>
+					    <Archive className='mr-1' size={14} />
+					    <CardText tag='span' className='user-info-title font-weight-bold mb-0'>
+					      Société
+					    </CardText>
+					  <CardText className='text-capitalize mb-0'>
+					  </CardText>
+					</div>
+					<div className='user-info-title'>
+					  <PhoneForwarded className='mr-1' size={14} />
+					  <CardText tag='span' className='user-info-title font-weight-bold mb-0'>
+						Secteur site
+					  </CardText>
+					<CardText className='text-capitalize mb-0'>
+					</CardText>
+					</div>
+					<div className='user-info-title'>
+					<Archive className='mr-1' size={14} />
+					<CardText tag='span' className='user-info-title font-weight-bold mb-0'>
+					  Responsable Client
+					</CardText>
+					<CardText className='text-capitalize mb-0'>
+					</CardText>
+					</div>
+					<div className='user-info-title'>
+					<Mail className='mr-1' size={14} />
+					<CardText tag='span' className='user-info-title font-weight-bold mb-0'>
+					E-mail
+					</CardText>
+					<CardText className='text-capitalize mb-0'>
+					</CardText>
+					</div>
+					<div className='user-info-title'>
+					<Archive className='mr-1' size={14} />
+					<CardText tag='span' className='user-info-title font-weight-bold mb-0'>
+					Tél/ Mobile
+					</CardText>
+					<CardText className='text-capitalize mb-0'>
+					</CardText>
+					</div>
+					<div className='user-info-title'>
+					<Archive className='mr-1' size={14} />
+					<CardText tag='span' className='user-info-title font-weight-bold mb-0'>
+					Responsable d'exploitation
+					</CardText>
+					<CardText className='text-capitalize mb-0'>
+					</CardText>
+					</div>
+					<div className='user-info-title'>
+					<Mail className='mr-1' size={14} />
+					<CardText tag='span' className='user-info-title font-weight-bold mb-0'>
+					E-mail
+					</CardText>
+					<CardText className='text-capitalize mb-0'>
+					</CardText>
+					</div>
+					<div className='user-info-title'>
+					<Archive className='mr-1' size={14} />
+					<CardText tag='span' className='user-info-title font-weight-bold mb-0'>
+					Tél/ Mobile
+					</CardText>
+					<CardText className='text-capitalize mb-0'>
+					</CardText>
+					</div>
 				  </Col>
 
 				</Row>
