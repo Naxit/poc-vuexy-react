@@ -14,7 +14,7 @@ const ListSites = () => {
 				<Col><CardMap/></Col>
 			</Row>
 			<Row>
-				<Col md='2'><Table/></Col>
+				<Col md='3'><Table/></Col>
 				<Col><Table/></Col>
 			</Row>
 		</div>
