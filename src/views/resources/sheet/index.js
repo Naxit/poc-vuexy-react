@@ -7,6 +7,7 @@ import AgentAbout from './AgentAbout'
 import MapsBasic from './MapsBasic'
 import PillsDetails from './PillsDetails'
 
+
 import '@styles/react/pages/page-profile.scss'
 
 const SheetResources = () => {
@@ -23,7 +24,7 @@ const SheetResources = () => {
         <div id='user-profile'>
           <Row>
             <Col sm='8'>
-              <AgentAbout selectedUser={data.user} />
+              <AgentAbout selectedUser={data.user}/>
             </Col>
 	          <Col xs='12' sm='4'>
 			  	<MapsBasic />
@@ -32,7 +33,7 @@ const SheetResources = () => {
 
 		    <Row>
               <Col sm='12'>
-			  	<PillsDetails/>
+			  	<PillsDetails selectedUser={data.user}/>
 			  </Col>
 		  </Row>
 

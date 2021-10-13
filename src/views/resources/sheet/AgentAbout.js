@@ -30,8 +30,8 @@ const AgentAbout = ({ selectedUser }) => {
             height: '100%'
           }}
           style={{
-            height: '90px',
-            width: '90px'
+            height: '100px',
+            width: '100px'
           }}
         />
       )
