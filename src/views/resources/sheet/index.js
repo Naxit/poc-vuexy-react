@@ -4,6 +4,8 @@ import UILoader from '@components/ui-loader'
 import { Row, Col, Button } from 'reactstrap'
 
 import AgentAbout from './AgentAbout'
+import MapsBasic from './MapsBasic'
+import PillsDetails from './PillsDetails'
 
 import '@styles/react/pages/page-profile.scss'
 
@@ -23,11 +25,16 @@ const SheetResources = () => {
             <Col sm='8'>
               <AgentAbout selectedUser={data.user} />
             </Col>
-	          <Col sm='4'>
-
+	          <Col xs='12' sm='4'>
+			  	<MapsBasic />
 	          </Col>
           </Row>
 
+		    <Row>
+              <Col sm='12'>
+			  	<PillsDetails/>
+			  </Col>
+		  </Row>
 
           <section id='profile-info'>
 

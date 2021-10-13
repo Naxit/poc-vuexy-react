@@ -54,6 +54,27 @@ const AgentAbout = ({ selectedUser }) => {
                     </CardText>
                   </div>
 
+
+				    <div className='d-flex flex-wrap align-items-center'>
+					  	<div className='user-info-title'>
+					  	  <CardText tag='span' className='user-info-title font-weight-bold mr-1'>
+					  		Société
+					  	  </CardText>
+					  	</div>
+					  	<CardText className='mb-0'>
+					  	  GLOBAL SKILLS
+					  	</CardText>
+				    </div>
+					<div className='d-flex flex-wrap align-items-center'>
+						<div className='user-info-title'>
+						  <CardText tag='span' className='user-info-title font-weight-bold mr-1'>
+							Secteur
+						  </CardText>
+						</div>
+						<CardText className='mb-0'>
+						  TSTSECTEUR
+						</CardText>
+					</div>
                 </div>
               </div>
             </div>
@@ -75,7 +96,7 @@ const AgentAbout = ({ selectedUser }) => {
                 </CardText>
               </div>
 
-			  
+
               <div className='d-flex flex-wrap align-items-center my-50'>
                 <div className='user-info-title'>
                   <Check className='mr-1' size={14} />
@@ -97,7 +118,7 @@ const AgentAbout = ({ selectedUser }) => {
                   </CardText>
                 </div>
                 <CardText className='text-capitalize mb-0'>
-                  {selectedUser !== null ? selectedUser.role : 'Admin'}
+                  {selectedUser !== null ? selectedUser.email : 'eleanor.aguilar@gmail.com'}
                 </CardText>
               </div>
 
