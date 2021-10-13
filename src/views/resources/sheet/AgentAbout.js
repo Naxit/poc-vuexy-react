@@ -46,7 +46,7 @@ const AgentAbout = ({ selectedUser }) => {
             <div className='user-avatar-section'>
               <div className='d-flex justify-content-start'>
                 {renderUserImg()}
-                <div className='d-flex flex-column ml-1'>
+                <div className='d-flex flex-column ml-1 my-50'>
                   <div className='user-info mb-1'>
                     <h4 className='mb-0'>{selectedUser !== null ? selectedUser.fullName : 'Eleanor Aguilar'}</h4>
                     <CardText tag='span'>
@@ -78,6 +78,11 @@ const AgentAbout = ({ selectedUser }) => {
                 </div>
               </div>
             </div>
+
+
+			<div className='d-flex justify-content-start'>
+				<h5>Compteurs sur le mois > </h5>
+			</div>
           </Col>
 
 
@@ -134,11 +139,22 @@ const AgentAbout = ({ selectedUser }) => {
               </div>
 
 
-              <div className='d-flex flex-wrap align-items-center'>
+              <div className='d-flex flex-wrap align-items-center my-50'>
                 <div className='user-info-title'>
                   <Phone className='mr-1' size={14} />
                   <CardText tag='span' className='user-info-title font-weight-bold mb-0'>
                     Nationalité
+                  </CardText>
+                </div>
+                <CardText className='mb-0'>{selectedUser !== null ? selectedUser.contact : '(123) 456-7890'}</CardText>
+              </div>
+
+
+              <div className='d-flex flex-wrap align-items-center'>
+                <div className='user-info-title'>
+                  <Phone className='mr-1' size={14} />
+                  <CardText tag='span' className='user-info-title font-weight-bold mb-0'>
+                    Carte professionnelle
                   </CardText>
                 </div>
                 <CardText className='mb-0'>{selectedUser !== null ? selectedUser.contact : '(123) 456-7890'}</CardText>
