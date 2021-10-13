@@ -17,6 +17,10 @@ import './pages/pricing-data'
 import './pages/blog-data'
 import './cards/card-analytics'
 import './cards/card-statistics'
+
+
+
+import './resources/list'
 import './jwt'
 
 mock.onAny().passThrough()
