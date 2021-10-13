@@ -1,5 +1,6 @@
 // ** User List Component
-import Table from './Table.js'
+import TableVacations from './TableVacations.js'
+import TableSites from './TableSites.js'
 import { Card, Dropdown, CardTitle, CardHeader, Input, Row, Col } from 'reactstrap'
 import PickerMonth from 'react-month-picker-input'
 import CardFilters from './CardFilters.js'
@@ -9,18 +10,27 @@ const ListSites = () => {
 	return (
 		<div className='app-user-list'>
 			<Row>
-				<Col md='2'><h2>Liste des sites</h2></Col>
+				<Col md='3'><h2>Liste des sites</h2></Col>
+				<Col md='4'>| Affichage des sites actifs sur le mois:</Col>
+				<Col md='3'>
+					<PickerMonth
+						year={2021}
+						month={10}
+						onChange={function(maskedValue, selectedYear, selectedMonth) {
+						console.log(maskedValue, selectedYear, selectedMonth);
+						}}
+					/>
+				</Col>
 			</Row>
 			<Row>
-				<Col md='3'>
+				<Col md='4'>
 					<CardFilters/>
-					<Table/>
+					<TableSites/>
 				</Col>
 
-				<Col>
+				<Col md='8'>
 					<CardMap/>
-					<Table/>
-
+					<TableVacations/>
 				</Col>
 			</Row>
 		</div>

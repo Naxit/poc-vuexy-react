@@ -1,24 +1,25 @@
-import { Card, Cols, Pills, Dropdown, DropdownMenu, DropdownItem, DropdownToggle, CardTitle, Input } from 'reactstrap'
+import { Card, Col, Row, Pills, CardTitle, Input } from 'reactstrap'
+import React, { useState } from 'react'
+import Select from 'react-select'
+
+const options = [
+  { value: 'chocolate', label: 'Chocolate' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' }
+]
+
 
 const CardFilters = () => {
+	const [dropdownOpen, setDropdownOpen] = useState(false)
+	const toggle = () => setDropdownOpen(prevState => !prevState)
 	return (
 		<Card>
-			<Input
-	   	 	  id='search-invoice'
-	   	 	  className='ml-50 w-100'
-	   	 	  type='text'
-	   	 	  value={''}
-	   	 	  onChange={()=>{}}/>
-			 <Dropdown></Dropdown>
-	   	 	<Dropdown>
-			<DropdownToggle color='primary' caret>
-	          Primary
-	        </DropdownToggle>
-				<DropdownMenu>
-				<DropdownItem>Option 1</DropdownItem>
-				</DropdownMenu>
-			</Dropdown>
-   	 	</Card>
+			<Col md='10'>
+				<Input type='search' onChange={(data)=>{console.log(data.target.value)}}/>
+				<Select placeholder='Filtre par Sociétés / Agences' options={options}/>
+				<Select placeholder='Filtre par Secteurs' options={options}/>
+			</Col>
+		</Card>
     )
 }
 

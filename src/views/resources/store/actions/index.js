@@ -4,7 +4,6 @@ import axios from 'axios'
 export const getData = params => {
   return dispatch => {
     axios.get('/api/resources/agent/data', params).then(response => {
-console.log(response);
       dispatch({
         type: 'GET_DATA',
         allData: response.data.agents,

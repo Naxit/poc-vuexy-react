@@ -1,6 +1,7 @@
 // ** React Imports
 import { Fragment, useState, useEffect } from 'react'
 
+
 // ** Invoice List Sidebar
 import Sidebar from './Sidebar'
 
@@ -17,7 +18,7 @@ import ReactPaginate from 'react-paginate'
 import { ChevronDown } from 'react-feather'
 import DataTable from 'react-data-table-component'
 import { selectThemeColors } from '@utils'
-import { Card, CardHeader, CardTitle, CardBody, Input, Row, Col, Label, CustomInput, Button } from 'reactstrap'
+import { Card, CardHeader, CardTitle, CardBody, Input, Row, Col, Label, CustomInput, Button, TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap'
 
 // ** Styles
 import '@styles/react/libs/react-select/_react-select.scss'
@@ -72,7 +73,7 @@ const CustomHeader = ({ toggleSidebar, handlePerPage, rowsPerPage, handleFilter,
   )
 }
 
-const UsersList = () => {
+const TableSites = () => {
   // ** Store Vars
   // const dispatch = useDispatch()
   const store = useSelector(state => state.users)
@@ -103,31 +104,6 @@ const UsersList = () => {
   //     })
   //   )
   // }, [dispatch, store.data.length])
-
-  // ** User filter options
-  const roleOptions = [
-    { value: '', label: 'Select Role' },
-    { value: 'admin', label: 'Admin' },
-    { value: 'author', label: 'Author' },
-    { value: 'editor', label: 'Editor' },
-    { value: 'maintainer', label: 'Maintainer' },
-    { value: 'subscriber', label: 'Subscriber' }
-  ]
-
-  const planOptions = [
-    { value: '', label: 'Select Plan' },
-    { value: 'basic', label: 'Basic' },
-    { value: 'company', label: 'Company' },
-    { value: 'enterprise', label: 'Enterprise' },
-    { value: 'team', label: 'Team' }
-  ]
-
-  const statusOptions = [
-    { value: '', label: 'Select Status', number: 0 },
-    { value: 'pending', label: 'Pending', number: 1 },
-    { value: 'active', label: 'Active', number: 2 },
-    { value: 'inactive', label: 'Inactive', number: 3 }
-  ]
 
   // ** Function in get data on page change
   const handlePagination = page => {
@@ -220,35 +196,31 @@ const UsersList = () => {
     }
   }
 
+   const [active, setActive] = useState('1')
+   const toggle = tab => {
+	 setActive(tab)
+   }
+
   return (
     <Fragment>
-      <Card>
-        <DataTable
-          noHeader
-          pagination
-          subHeader
-          responsive
-          paginationServer
-          columns={columns}
-          sortIcon={<ChevronDown />}
-          className='react-dataTable'
-          paginationComponent={CustomPagination}
-          data={dataToRender()}
-          subHeaderComponent={
-            <CustomHeader
-              toggleSidebar={toggleSidebar}
-              handlePerPage={handlePerPage}
-              rowsPerPage={rowsPerPage}
-              searchTerm={searchTerm}
-              handleFilter={handleFilter}
-            />
-          }
-        />
-      </Card>
+		<Card>
+			<DataTable
+		   noHeader
+		   pagination
+		   subHeader
+		   responsive
+		   paginationServer
+		   columns={columns}
+		   sortIcon={<ChevronDown />}
+		   className='react-dataTable'
+		   paginationComponent={CustomPagination}
+		   data={dataToRender()}
+		   />
+		</Card>
 
       <Sidebar open={sidebarOpen} toggleSidebar={toggleSidebar} />
     </Fragment>
   )
 }
 
-export default UsersList
+export default TableSites
