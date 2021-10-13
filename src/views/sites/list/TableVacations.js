@@ -9,7 +9,7 @@ import Sidebar from './Sidebar'
 import { columns } from './columns'
 
 // ** Store & Actions
-// import { getAllData, getData } from './../../user/store/action/index.js'
+import { getAllData, getData } from './../store/action/index.js'
 import { useDispatch, useSelector } from 'react-redux'
 
 // ** Third Party Components
@@ -75,7 +75,7 @@ const CustomHeader = ({ toggleSidebar, handlePerPage, rowsPerPage, handleFilter,
 
 const TableVacations = () => {
   // ** Store Vars
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const store = useSelector(state => state.users)
 
   // ** States
@@ -91,19 +91,19 @@ const TableVacations = () => {
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen)
 
   // ** Get data on mount
-  // useEffect(() => {
-  //   // dispatch(getAllData())
-  //   dispatch(
-  //     getData({
-  //       page: currentPage,
-  //       perPage: rowsPerPage,
-  //       role: currentRole.value,
-  //       currentPlan: currentPlan.value,
-  //       status: currentStatus.value,
-  //       q: searchTerm
-  //     })
-  //   )
-  // }, [dispatch, store.data.length])
+  useEffect(() => {
+    // dispatch(getAllData())
+    dispatch(
+      getData({
+        page: currentPage,
+        perPage: rowsPerPage,
+        role: currentRole.value,
+        currentPlan: currentPlan.value,
+        status: currentStatus.value,
+        q: searchTerm
+      })
+    )
+  }, [dispatch, store.data.length])
 
   // ** User filter options
   const roleOptions = [
@@ -256,7 +256,7 @@ const TableVacations = () => {
 				  toggle('3')
 				}}
 			  >
-				'Plan du site & Accès'
+				Plan du site & Accès
 			  </NavLink>
 			</NavItem>
 		  </Nav>
@@ -287,20 +287,24 @@ const TableVacations = () => {
 			 </Card>
 			</TabPane>
 			<TabPane tabId='2'>
+			<Card>
 			  <p>
 				Pudding candy canes sugar plum cookie chocolate cake powder croissant. Carrot cake tiramisu danish candy
 				cake muffin croissant tart dessert. Tiramisu caramels candy canes chocolate cake sweet roll liquorice icing
 				cupcake.Bear claw chocolate chocolate cake jelly-o pudding lemon drops sweet roll sweet candy. Chocolate
 				sweet chocolate bar candy chocolate bar chupa chups gummi bears lemon drops.
 			  </p>
+			 </Card>
 			</TabPane>
 			<TabPane tabId='3'>
+			<Card>
 			  <p>
 				Carrot cake dragée chocolate. Lemon drops ice cream wafer gummies dragée. Chocolate bar liquorice cheesecake
 				cookie chupa chups marshmallow oat cake biscuit. Dessert toffee fruitcake ice cream powder tootsie roll
 				cake.Chocolate bonbon chocolate chocolate cake halvah tootsie roll marshmallow. Brownie chocolate toffee
 				toffee jelly beans bonbon sesame snaps sugar plum candy canes.
 			  </p>
+			</Card>
 			</TabPane>
 		  </TabContent>
 

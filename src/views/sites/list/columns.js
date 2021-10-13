@@ -9,7 +9,7 @@ import Avatar from '@components/avatar'
 import { store } from '@store/storeConfig/store'
 
 // ** Third Party Components
-import { Badge, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
+import { Badge, CustomInput } from 'reactstrap'
 import { Slack, User, Settings, Database, Edit2, MoreVertical, FileText, Trash2, Archive } from 'react-feather'
 
 // ** Renders Client Columns
@@ -125,70 +125,30 @@ export const columns = [
     name: 'PDS',
     minWidth: '100px',
     cell: row => (
-      <UncontrolledDropdown>
-        <DropdownToggle tag='div' className='btn btn-sm'>
-          <MoreVertical size={14} className='cursor-pointer' />
-        </DropdownToggle>
-        <DropdownMenu right>
-          <DropdownItem
-            tag={Link}
-            to={`/apps/user/view/${row.id}`}
-            className='w-100'
-            onClick={() => store.dispatch(getUser(row.id))}
-          >
-            <FileText size={14} className='mr-50' />
-            <span className='align-middle'>Details</span>
-          </DropdownItem>
-          <DropdownItem
-            tag={Link}
-            to={`/apps/user/edit/${row.id}`}
-            className='w-100'
-            onClick={() => store.dispatch(getUser(row.id))}
-          >
-            <Archive size={14} className='mr-50' />
-            <span className='align-middle'>Edit</span>
-          </DropdownItem>
-          <DropdownItem className='w-100' onClick={() => store.dispatch(deleteUser(row.id))}>
-            <Trash2 size={14} className='mr-50' />
-            <span className='align-middle'>Delete</span>
-          </DropdownItem>
-        </DropdownMenu>
-      </UncontrolledDropdown>
+		<CustomInput
+    	  className='custom-control-success'
+    	  type='switch'
+    	  id='success'
+    	  name='success'
+    	  inline
+		  checked={false}
+		  onChange={(e)=>console.log(e.target.value)}
+    	/>
     )
 },
 {
   name: 'FDS',
   minWidth: '100px',
   cell: row => (
-	<UncontrolledDropdown>
-	  <DropdownToggle tag='div' className='btn btn-sm'>
-		<MoreVertical size={14} className='cursor-pointer' />
-	  </DropdownToggle>
-	  <DropdownMenu right>
-		<DropdownItem
-		  tag={Link}
-		  to={`/apps/user/view/${row.id}`}
-		  className='w-100'
-		  onClick={() => store.dispatch(getUser(row.id))}
-		>
-		  <FileText size={14} className='mr-50' />
-		  <span className='align-middle'>Details</span>
-		</DropdownItem>
-		<DropdownItem
-		  tag={Link}
-		  to={`/apps/user/edit/${row.id}`}
-		  className='w-100'
-		  onClick={() => store.dispatch(getUser(row.id))}
-		>
-		  <Archive size={14} className='mr-50' />
-		  <span className='align-middle'>Edit</span>
-		</DropdownItem>
-		<DropdownItem className='w-100' onClick={() => store.dispatch(deleteUser(row.id))}>
-		  <Trash2 size={14} className='mr-50' />
-		  <span className='align-middle'>Delete</span>
-		</DropdownItem>
-	  </DropdownMenu>
-	</UncontrolledDropdown>
+	  <CustomInput
+  	  className='custom-control-success'
+  	  type='switch'
+  	  id='success'
+  	  name='success'
+  	  inline
+  	  checked={false}
+	  onChange={(e)=>console.log(e.target.value)}
+  	/>
   )
 }
 ]

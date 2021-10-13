@@ -6,10 +6,10 @@ import { Fragment, useState, useEffect } from 'react'
 import Sidebar from './Sidebar'
 
 // ** Columns
-import { columns } from './columns'
+import { columnTableSites } from './columnTableSites'
 
 // ** Store & Actions
-// import { getAllData, getData } from './../../user/store/action/index.js'
+import { getAllData, getData } from './../store/action/index.js'
 import { useDispatch, useSelector } from 'react-redux'
 
 // ** Third Party Components
@@ -75,7 +75,7 @@ const CustomHeader = ({ toggleSidebar, handlePerPage, rowsPerPage, handleFilter,
 
 const TableSites = () => {
   // ** Store Vars
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const store = useSelector(state => state.users)
 
   // ** States
@@ -91,19 +91,19 @@ const TableSites = () => {
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen)
 
   // ** Get data on mount
-  // useEffect(() => {
-  //   // dispatch(getAllData())
-  //   dispatch(
-  //     getData({
-  //       page: currentPage,
-  //       perPage: rowsPerPage,
-  //       role: currentRole.value,
-  //       currentPlan: currentPlan.value,
-  //       status: currentStatus.value,
-  //       q: searchTerm
-  //     })
-  //   )
-  // }, [dispatch, store.data.length])
+  useEffect(() => {
+    // dispatch(getAllData())
+    dispatch(
+      getData({
+        page: currentPage,
+        perPage: rowsPerPage,
+        role: currentRole.value,
+        currentPlan: currentPlan.value,
+        status: currentStatus.value,
+        q: searchTerm
+      })
+    )
+  }, [dispatch, store.data.length])
 
   // ** Function in get data on page change
   const handlePagination = page => {
@@ -210,7 +210,7 @@ const TableSites = () => {
 		   subHeader
 		   responsive
 		   paginationServer
-		   columns={columns}
+		   columns={columnTableSites}
 		   sortIcon={<ChevronDown />}
 		   className='react-dataTable'
 		   paginationComponent={CustomPagination}
