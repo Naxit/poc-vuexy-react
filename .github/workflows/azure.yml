@@ -23,6 +23,6 @@ jobs:
       with:
         server: ftps://waws-prod-par-013.ftp.azurewebsites.windows.net/site/wwwroot
         username: POC-Comete-React\$POC-Comete-React
-        password: ${{ secrets.password }}
+        password: QEi7ng15naugDFbxQFymbWgNcqhmfJPXSeoGS4TEwC6YEZc2iabQgSp2dxzy
         server-dir: /site/wwwroot
         
