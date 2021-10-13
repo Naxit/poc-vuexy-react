@@ -69,7 +69,7 @@ export const columns = [
   {
     name: <TrendingUp size={14} />,
     minWidth: '102px',
-    selector: 'invoiceStatus',
+    selector: 'avatar',
     sortable: true,
     cell: row => {
       const color = invoiceStatusObj[row.invoiceStatus] ? invoiceStatusObj[row.invoiceStatus].color : 'primary',
@@ -91,49 +91,71 @@ export const columns = [
   {
     name: 'NOM PRENOM / MATRICULE',
     minWidth: '350px',
-    selector: 'client',
+    selector: 'fullName',
     sortable: true,
     cell: row => {
-      const name = row.client ? row.client.name : 'John Doe',
-        email = row.client ? row.client.companyEmail : 'johnDoe@email.com'
+
       return (
         <div className='d-flex justify-content-left align-items-center'>
           {renderClient(row)}
           <div className='d-flex flex-column'>
-            <h6 className='user-name text-truncate mb-0'>{name}</h6>
-            <small className='text-truncate text-muted mb-0'>{email}</small>
+            <h6 className='user-name text-truncate mb-0'>{row.fullName}</h6>
+            <small className='text-truncate text-muted mb-0'>{row.email}</small>
           </div>
         </div>
       )
     }
   },
   {
-    name: 'Total',
-    selector: 'total',
-    sortable: true,
-    minWidth: '150px',
-    cell: row => <span>${row.total || 0}</span>
-  },
-  {
-    name: 'Issued Date',
-    selector: 'dueDate',
+    name: 'Payable hours',
+    selector: 'hours_worked_payable',
     sortable: true,
     minWidth: '200px',
-    cell: row => row.dueDate
+    cell: row => row.hours_worked_payable
   },
   {
-    name: 'Balance',
-    selector: 'balance',
+    name: 'Unavailability +',
+    selector: 'hours_busy_payable',
     sortable: true,
     minWidth: '164px',
     cell: row => {
       return row.balance !== 0 ? (
-        <span>{row.balance}</span>
+        <span>{row.hours_busy_payable}</span>
       ) : (
         <Badge color='light-success' pill>
           Paid
         </Badge>
       )
-    }
   }
+},
+  {
+	name: 'Unavailability -',
+	selector: 'hours_busy_deducted',
+	sortable: true,
+	minWidth: '164px',
+	cell: row => {
+	  return row.balance !== 0 ? (
+		<span>{row.hours_busy_deducted}</span>
+	  ) : (
+		<Badge color='light-success' pill>
+		  Paid
+		</Badge>
+	  )
+	}
+},
+{
+  name: 'Delta contract',
+  selector: 'delta_contract',
+  sortable: true,
+  minWidth: '164px',
+  cell: row => {
+	return row.balance !== 0 ? (
+	  <span>{row.delta_contract}</span>
+	) : (
+	  <Badge color='light-success' pill>
+		Paid
+	  </Badge>
+	)
+  }
+}
 ]
