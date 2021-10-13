@@ -1,4 +1,4 @@
-import { Card, Col, Row, Pills, CardTitle, Input } from 'reactstrap'
+import { Card, Col, Row, Input } from 'reactstrap'
 import React, { useState } from 'react'
 import Select from 'react-select'
 
@@ -14,10 +14,10 @@ const CardFilters = () => {
 	const toggle = () => setDropdownOpen(prevState => !prevState)
 	return (
 		<Card>
-			<Col md='10'>
-				<Input type='search' onChange={(data)=>{console.log(data.target.value)}}/>
-				<Select placeholder='Filtre par Sociétés / Agences' options={options}/>
-				<Select placeholder='Filtre par Secteurs' options={options}/>
+			<Col md='10' className='ml-2 mr-2'>
+				<Input className='mt-2 mb-2' type='search' placeholder='Rechercher un site...' onChange={(data)=>{console.log(data.target.value)}}/>
+				<Select className='mt-2 mb-2' placeholder='Filtre par Sociétés / Agences' options={options}/>
+				<Select className='mt-2 mb-2' placeholder='Filtre par Secteurs' options={options}/>
 			</Col>
 		</Card>
     )
