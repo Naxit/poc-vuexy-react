@@ -3,6 +3,7 @@ import ResourcesRoutes from './Resources'
 import SitesRoutes from './Sites'
 import ServicesRoutes from './Services'
 
+import DashboardRoutes from './Dashboard'
 import AppRoutes from './Apps'
 import FormRoutes from './Forms'
 import PagesRoutes from './Pages'
@@ -23,10 +24,13 @@ const DefaultRoute = '/resources/list'
 
 // ** Merge Routes
 const Routes = [
+	// POC routes
   ...ResourcesRoutes,
   ...SitesRoutes,
-	...ServicesRoutes,
+  ...ServicesRoutes,
 
+	// Old routes
+  ...DashboardRoutes,
   ...AppRoutes,
   ...PagesRoutes,
   ...UiElementRoutes,
