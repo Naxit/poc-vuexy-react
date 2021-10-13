@@ -21,9 +21,9 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
-        server: waws-prod-par-013.ftp.azurewebsites.windows.net
-        username: POC-Comete-React\$POC-Comete-React
-        password: QEi7ng15naugDFbxQFymbWgNcqhmfJPXSeoGS4TEwC6YEZc2iabQgSp2dxzy
-        server-dir: /site/wwwroot/
-        protocol: ftps
-        port: 990
+        server: files.000webhost.com
+        username: poc-comete-react
+        password: azertyuiop1234567890_
+        server-dir: /public_html/
+        protocol: ftp
+        port: 21
