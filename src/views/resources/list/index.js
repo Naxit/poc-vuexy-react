@@ -1,4 +1,4 @@
-const ListAgents = () => {
+const ListResources = () => {
   return (
     <div>
 			Liste des agents
@@ -6,4 +6,4 @@ const ListAgents = () => {
   )
 }
 
-export default ListAgents
+export default ListResources

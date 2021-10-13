@@ -1,6 +1,7 @@
 // ** Routes Imports
-import AgentsRoutes from './Agents'
+import ResourcesRoutes from './Resources'
 import SitesRoutes from './Sites'
+import ServicesRoutes from './Services'
 
 import AppRoutes from './Apps'
 import FormRoutes from './Forms'
@@ -17,13 +18,14 @@ const TemplateTitle = '%s - POC Vuexy React Template'
 
 
 // ** Default Route
-const DefaultRoute = '/agents/list'
+const DefaultRoute = '/resources/list'
 
 
 // ** Merge Routes
 const Routes = [
-  ...AgentsRoutes,
+  ...ResourcesRoutes,
   ...SitesRoutes,
+	...ServicesRoutes,
 
   ...AppRoutes,
   ...PagesRoutes,
