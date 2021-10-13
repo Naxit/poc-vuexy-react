@@ -38,6 +38,7 @@ import {
 	Mail,
 	MapPin,
 	Phone,
+	Smartphone,
 	User,
 	Zap
 } from 'react-feather'
@@ -301,7 +302,9 @@ const Services = () => {
 										</Col>
 									</Row>
 									<Row className='mt-1'>
-										<Col>
+										<Col style={{
+												// height: '10rem'
+										}}>
 											<MapContainer center={[51.5074, 0.1278]} zoom={13} className='leaflet-map'>
 												<TileLayer
 													attribution='&ampcopy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -325,28 +328,109 @@ const Services = () => {
 
 						{/**	Site	*/}
 						<TabPane tabId='3'>
-							<p>
-								Gingerbread cake cheesecake lollipop topping bonbon chocolate sesame snaps. Dessert macaroon bonbon carrot
-								cake biscuit. Lollipop lemon drops cake gingerbread liquorice. Sweet gummies dragée. Donut bear claw pie
-								halvah oat cake cotton candy sweet roll. Cotton candy sweet roll donut ice cream.
-							</p>
-							<p>
-								Halvah bonbon topping halvah ice cream cake candy. Wafer gummi bears chocolate cake topping powder. Sweet
-								marzipan cheesecake jelly-o powder wafer lemon drops lollipop cotton candy.
-							</p>
+							<ListGroup className='list-group-filters mb-1'>
+								<ListGroupItem>
+									<Row className='p-1 align-items-center'>
+										<Col className='no-wrap'>
+											<Row>
+												<Col>
+													<h5>
+														Carrefour Les Ulis
+													</h5>
+												</Col>
+											</Row>
+											<Row>
+												<Col className='flex-grow-0 my-1'>
+													<Button.Ripple color='primary' className='d-flex no-wrap align-items-center'>
+														<Calendar className='mr-75' size={18} />
+														<span>Planning</span>
+													</Button.Ripple>
+												</Col>
+												<Col className='flex-grow-0'>
+													<Button.Ripple color='primary' outline className='d-flex no-wrap align-items-center'>
+														<Clipboard className='mr-75' size={18} />
+														<span>Fiche</span>
+													</Button.Ripple>
+												</Col>
+											</Row>
+										</Col>
+										<Col>
+											<Row>
+												<Col style={{
+														height: '12rem',
+														overflow: 'hidden'
+												}}>
+													<MapContainer center={[51.5074, 0.1278]} zoom={13} className='leaflet-map'>
+														<TileLayer
+															attribution='&ampcopy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+															url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
+														/>
+														<Marker position={[51.5074, 0.1278]} />
+													</MapContainer>
+												</Col>
+											</Row>
+											<Row className='mt-1'>
+												<Col>
+													<span>
+														1, rue Terre Neuve<br/>
+														91940 LES ULIS, France
+													</span>
+												</Col>
+											</Row>
+										</Col>
+									</Row>
+								</ListGroupItem>
+							</ListGroup>
+							<ListGroup className='list-group-filters'>
+								<ListGroupItem>
+									<Row className='pt-1'>
+										<Col>
+											<h4>Coordonnées</h4>
+											<Button.Ripple color='flat-primary' className='d-flex no-wrap align-items-center'>
+												<Phone className='mr-75' size={18} />
+												<span>06 29 98 28 00</span>
+											</Button.Ripple>
+											<Button.Ripple color='flat-primary' className='d-flex no-wrap align-items-center'>
+												<Smartphone className='mr-75' size={18} />
+												<span>06 29 98 28 00</span>
+											</Button.Ripple>
+										</Col>
+									</Row>
+								</ListGroupItem>
+							</ListGroup>
 						</TabPane>
 
 						{/**	Consignes & accès	*/}
 						<TabPane tabId='4'>
-							<p>
-								Gingerbread cake cheesecake lollipop topping bonbon chocolate sesame snaps. Dessert macaroon bonbon carrot
-								cake biscuit. Lollipop lemon drops cake gingerbread liquorice. Sweet gummies dragée. Donut bear claw pie
-								halvah oat cake cotton candy sweet roll. Cotton candy sweet roll donut ice cream.
-							</p>
-							<p>
-								Halvah bonbon topping halvah ice cream cake candy. Wafer gummi bears chocolate cake topping powder. Sweet
-								marzipan cheesecake jelly-o powder wafer lemon drops lollipop cotton candy.
-							</p>
+							<ListGroup className='list-group-filters mb-1'>
+								<ListGroupItem>
+									<h4>Consignes du site</h4>
+									<p>
+										Gingerbread cake cheesecake lollipop topping bonbon chocolate sesame snaps. Dessert macaroon bonbon carrot
+										cake biscuit. Lollipop lemon drops cake gingerbread liquorice. Sweet gummies dragée. Donut bear claw pie
+										halvah oat cake cotton candy sweet roll. Cotton candy sweet roll donut ice cream.
+									</p>
+								</ListGroupItem>
+							</ListGroup>
+							<ListGroup className='list-group-filters mb-1'>
+								<ListGroupItem>
+									<h4>Consignes du profil</h4>
+									<p>
+										Gingerbread cake cheesecake lollipop topping bonbon chocolate sesame snaps. Dessert macaroon bonbon carrot
+										cake biscuit. Lollipop lemon drops cake gingerbread liquorice. Sweet gummies dragée. Donut bear claw pie
+										halvah oat cake cotton candy sweet roll. Cotton candy sweet roll donut ice cream.
+									</p>
+								</ListGroupItem>
+							</ListGroup>
+							<ListGroup className='list-group-filters'>
+								<ListGroupItem>
+									<h4>Accès</h4>
+									<p>
+										Halvah bonbon topping halvah ice cream cake candy. Wafer gummi bears chocolate cake topping powder. Sweet
+										marzipan cheesecake jelly-o powder wafer lemon drops lollipop cotton candy.
+									</p>
+								</ListGroupItem>
+							</ListGroup>
 						</TabPane>
 					</TabContent>
 				</ModalBody>
