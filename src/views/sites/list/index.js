@@ -1,29 +1,30 @@
 // ** User List Component
 import Table from './Table.js'
-import { Card, Cols, Pills, Dropdown, CardTitle, CardHeader, Select, Input } from 'reactstrap'
+import { Card, Dropdown, CardTitle, CardHeader, Input, Row, Col } from 'reactstrap'
 import PickerMonth from 'react-month-picker-input'
+import CardFilters from './CardFilters.js'
+import CardMap from './CardMap.js'
 
 const ListSites = () => {
 	return (
-      <div className='app-user-list'>
-  	  <Card>  <Input
-			id='search-invoice'
-			className='ml-50 w-100'
-			type='text'
-			value={''}
-			onChange={()=>{}}
-		  /><Dropdown/>
-		  <Dropdown/>
-		  </Card>
-  	  <Card>
-  	  <CardHeader>
-   	   <CardTitle tag='h2'>BTelecom - Ouest</CardTitle>
-   	 </CardHeader>
-  	 </Card>
-  	  <Card><Table/></Card>
-  	 <Card><Table/></Card>
-      </div>
-    )
+		<div className='app-user-list'>
+			<Row>
+				<Col md='2'><h2>Liste des sites</h2></Col>
+			</Row>
+			<Row>
+				<Col md='3'>
+					<CardFilters/>
+					<Table/>
+				</Col>
+
+				<Col>
+					<CardMap/>
+					<Table/>
+
+				</Col>
+			</Row>
+		</div>
+	)
 }
 
 export default ListSites

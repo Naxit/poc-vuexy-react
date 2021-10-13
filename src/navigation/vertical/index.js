@@ -18,6 +18,7 @@ export default [
 	...resources,
 	...sites,
 	...services,
+
 	...dashboards,
 	...apps,
 	...pages,
