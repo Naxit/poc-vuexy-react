@@ -29,8 +29,22 @@ import {
 	modalForm,
 	modalUnmount
 } from '../components/modal/ModalSourceCode.js'
-import { Award, Clock, Flag, Mail, MapPin, Phone, User, Zap } from 'react-feather'
-import PerfectScrollbar from 'react-perfect-scrollbar'
+import {
+	Award,
+	Calendar,
+	Clipboard,
+	Clock,
+	Flag,
+	Mail,
+	MapPin,
+	Phone,
+	User,
+	Zap
+} from 'react-feather'
+import Avatar from '@components/avatar'
+import avatarImg from '@src/assets/images/portrait/small/avatar-s-20.jpg'
+import { MapContainer, TileLayer, Marker } from 'react-leaflet'
+import '@styles/react/libs/maps/map-leaflet.scss'
 
 
 const Services = () => {
@@ -83,14 +97,16 @@ const Services = () => {
 					</Nav>
 
 					<TabContent className='py-50' activeTab={active}>
+
+						{/**	Pointage	*/}
 						<TabPane tabId='1'>
 							<ModalBody>
-								<ListGroup className='list-group-filters'>
+								<ListGroup className='list-group-filters mb-1'>
 									<ListGroupItem>
 										<Row>
 											<Col className='mb-0'>
 												<Clock className='mr-75' size={18} />
-												<span className='align-middle' style={{ marginBottom: 0 }}>Prise de service</span>
+												<span className='align-middle'>Prise de service</span>
 											</Col>
 											<Col>
 												<span className='align-middle'>08:00</span>
@@ -104,103 +120,88 @@ const Services = () => {
 										<Row>
 											<Col className='mb-0'>
 												<Clock className='mr-75' size={18} />
-												<span className='align-middle' style={{ marginBottom: 0 }}>Fin de service</span>
+												<span className='align-middle'>Fin de service</span>
 											</Col>
 											<Col>
 												<span className='align-middle'>20:00</span>
 											</Col>
 											<Col className='col-2'>
-												<CustomInput type='switch' id='admin-1' label='' defaultChecked disabled />
+												<CustomInput type='switch' id='admin-2' label='' defaultChecked disabled />
 											</Col>
 										</Row>
 									</ListGroupItem>
 								</ListGroup>
-							</ModalBody>
 
-							<ModalBody>
-								<Row className='my-1'>
-									<Col>
-										<User className='mr-75' size={18} color='secondary'/>
-										<span>Agent</span>
-									</Col>
-									<Col>
-										John DOE
-									</Col>
-								</Row>
-								<Row className='my-1'>
-									<Col>
-										<MapPin className='mr-75' size={18} />
-										<span>Site</span>
-									</Col>
-									<Col>
-										Carrefour Les Ulis
-									</Col>
-								</Row>
-								<Row className='my-1'>
-									<Col>
-										<Award className='mr-75' size={18} />
-										<span>Prestation</span>
-									</Col>
-									<Col>
-										Gardiennage
-									</Col>
-								</Row>
-								<Row className='my-1'>
-									<Col>
-										<Flag className='mr-75' size={18} />
-										<span>Profil</span>
-									</Col>
-									<Col>
-										SISAP1 JOUR
-									</Col>
-								</Row>
-								<Row className='my-1'>
-									<Col>
-										<Zap className='mr-75' size={18} />
-										<span>Activité</span>
-									</Col>
-									<Col>
-										SSIAP 1
-									</Col>
-								</Row>
-							</ModalBody>
-
-							<ModalBody>
-								<ListGroup className='list-group-filters'>
+								<ListGroup className='list-group-filters mb-1'>
 									<ListGroupItem>
-										<Row>
+										<h4>
+											Informations
+										</h4>
+										<Row className='my-1'>
 											<Col>
-												<h4>
-													Responsable d'exploitation
-												</h4>
-												<span>
-													Jamel CHERIF
-												</span>
+												<User className='mr-75' size={18} />
+												<span>Agent</span>
+											</Col>
+											<Col>
+												John DOE
 											</Col>
 										</Row>
+										<Row className='my-1'>
+											<Col>
+												<MapPin className='mr-75' size={18} />
+												<span>Site</span>
+											</Col>
+											<Col>
+												Carrefour Les Ulis
+											</Col>
+										</Row>
+										<Row className='my-1'>
+											<Col>
+												<Award className='mr-75' size={18} />
+												<span>Prestation</span>
+											</Col>
+											<Col>
+												Gardiennage
+											</Col>
+										</Row>
+										<Row className='my-1'>
+											<Col>
+												<Flag className='mr-75' size={18} />
+												<span>Profil</span>
+											</Col>
+											<Col>
+												SISAP1 JOUR
+											</Col>
+										</Row>
+										<Row className='my-1'>
+											<Col>
+												<Zap className='mr-75' size={18} />
+												<span>Activité</span>
+											</Col>
+											<Col>
+												SSIAP 1
+											</Col>
+										</Row>
+									</ListGroupItem>
+								</ListGroup>
+
+								<ListGroup className='list-group-filters mb-1'>
+									<ListGroupItem>
+										<h4>
+											Responsable d'exploitation
+										</h4>
+										<span>
+											Jamel CHERIF
+										</span>
 										<Row className='mt-1' noGutters>
 											<Col>
-												<Button.Ripple color='flat-primary' size='sm'
-													style={{
-														display: 'flex',
-														flexWrap: 'nowrap',
-														alignItems: 'center',
-														whiteSpace: 'nowrap'
-													}}
-												>
+												<Button.Ripple color='flat-primary' size='sm' className='d-flex nowrap align-items-center'>
 													<Phone className='mr-75' size={18} />
 													<span>06 28 80 27 93</span>
 												</Button.Ripple>
 											</Col>
 											<Col>
-												<Button.Ripple color='flat-primary' size='sm'
-													style={{
-														display: 'flex',
-														flexWrap: 'nowrap',
-														alignItems: 'center',
-														whiteSpace: 'nowrap'
-													}}
-												>
+												<Button.Ripple color='flat-primary' size='sm' className='d-flex nowrap align-items-center'>
 													<Mail className='mr-75' size={18} />
 													<span>jamel.cherif@secu.com</span>
 												</Button.Ripple>
@@ -209,41 +210,23 @@ const Services = () => {
 									</ListGroupItem>
 								</ListGroup>
 
-								<ListGroup className='list-group-filters mt-1'>
+								<ListGroup className='list-group-filters'>
 									<ListGroupItem>
-										<Row>
-											<Col>
-												<h4>
-													Responsable client
-												</h4>
-												<span>
-													Mathieu VALLET
-												</span>
-											</Col>
-										</Row>
+										<h4>
+											Responsable client
+										</h4>
+										<span>
+											Mathieu VALLET
+										</span>
 										<Row className='mt-1' noGutters>
 											<Col>
-												<Button.Ripple color='flat-primary' size='sm'
-													style={{
-														display: 'flex',
-														flexWrap: 'nowrap',
-														alignItems: 'center',
-														whiteSpace: 'nowrap'
-													}}
-												>
+												<Button.Ripple color='flat-primary' size='sm' className='d-flex nowrap align-items-center'>
 													<Phone className='mr-75' size={18} />
 													<span>06 28 80 27 93</span>
 												</Button.Ripple>
 											</Col>
 											<Col>
-												<Button.Ripple color='flat-primary' size='sm'
-													style={{
-														display: 'flex',
-														flexWrap: 'nowrap',
-														alignItems: 'center',
-														whiteSpace: 'nowrap'
-													}}
-												>
+												<Button.Ripple color='flat-primary' size='sm' className='d-flex nowrap align-items-center'>
 													<Mail className='mr-75' size={18} />
 													<span>mathieu.vallet@secu.com</span>
 												</Button.Ripple>
@@ -254,18 +237,93 @@ const Services = () => {
 							</ModalBody>
 						</TabPane>
 
+						{/**	Agent	*/}
 						<TabPane tabId='2'>
-							<p>
-								Dragée jujubes caramels tootsie roll gummies gummies icing bonbon. Candy jujubes cake cotton candy. Jelly-o
-								lollipop oat cake marshmallow fruitcake candy canes toffee. Jelly oat cake pudding jelly beans brownie lemon
-								drops ice cream halvah muffin. Brownie candy tiramisu macaroon tootsie roll danish.
-							</p>
-							<p>
-								Croissant pie cheesecake sweet roll. Gummi bears cotton candy tart jelly-o caramels apple pie jelly danish
-								marshmallow. Icing caramels lollipop topping. Bear claw powder sesame snaps.
-							</p>
+							<ListGroup className='list-group-filters mb-1'>
+								<ListGroupItem>
+									<Row className='p-1 align-items-center'>
+										<Col className='flex-grow-0'>
+											<Avatar img={avatarImg} size='xl'/>
+											<span className='mt-1'>MAT07389</span>
+										</Col>
+										<Col className='no-wrap'>
+											<Row>
+												<Col>
+													<h5>
+														François-Régis DE FEYDEAU DE SAINT-CHRISTOPHE
+													</h5>
+												</Col>
+											</Row>
+											<Row className='pt-1'>
+												<Col className='flex-grow-0'>
+													<Button.Ripple color='primary' className='d-flex no-wrap align-items-center'>
+														<Calendar className='mr-75' size={18} />
+														<span>Planning</span>
+													</Button.Ripple>
+												</Col>
+												<Col className='flex-grow-0'>
+													<Button.Ripple color='primary' outline className='d-flex no-wrap align-items-center'>
+														<Clipboard className='mr-75' size={18} />
+														<span>Fiche</span>
+													</Button.Ripple>
+												</Col>
+											</Row>
+										</Col>
+									</Row>
+								</ListGroupItem>
+							</ListGroup>
+							<ListGroup className='list-group-filters'>
+								<ListGroupItem>
+									<Row className='pt-1'>
+										<Col>
+											<h4>Coordonnées</h4>
+											<Button.Ripple color='flat-primary' className='d-flex no-wrap align-items-center'>
+												<Phone className='mr-75' size={18} />
+												<span>06 29 98 28 00</span>
+											</Button.Ripple>
+											<Button.Ripple color='flat-primary'
+												className='d-flex no-wrap align-items-center justify-content-start'>
+												<Mail className='mr-75' size={18} />
+												<span>francois-regis.de-feydeau@gmail.com</span>
+											</Button.Ripple>
+										</Col>
+									</Row>
+									<Row className='mt-1'>
+										<Col>
+											<span>Carte professionnelle</span>
+											<h5>CAR-02B-2022-07-26-20170599381</h5>
+										</Col>
+									</Row>
+									<Row className='mt-1'>
+										<Col>
+											<span>Numéro de sécurité sociale</span>
+											<h5>1 86 08 69 388 039 73</h5>
+										</Col>
+									</Row>
+									<Row className='mt-1'>
+										<Col>
+											<MapContainer center={[51.5074, 0.1278]} zoom={13} className='leaflet-map'>
+												<TileLayer
+													attribution='&ampcopy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+													url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
+												/>
+												<Marker position={[51.5074, 0.1278]} />
+											</MapContainer>
+										</Col>
+									</Row>
+									<Row className='mt-1'>
+										<Col>
+											<span>
+												1, rue Terre Neuve<br/>
+												91940 LES ULIS, France
+											</span>
+										</Col>
+									</Row>
+								</ListGroupItem>
+							</ListGroup>
 						</TabPane>
 
+						{/**	Site	*/}
 						<TabPane tabId='3'>
 							<p>
 								Gingerbread cake cheesecake lollipop topping bonbon chocolate sesame snaps. Dessert macaroon bonbon carrot
@@ -278,6 +336,7 @@ const Services = () => {
 							</p>
 						</TabPane>
 
+						{/**	Consignes & accès	*/}
 						<TabPane tabId='4'>
 							<p>
 								Gingerbread cake cheesecake lollipop topping bonbon chocolate sesame snaps. Dessert macaroon bonbon carrot
