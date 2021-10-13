@@ -5,7 +5,7 @@ export default [
     header: 'Ressources'
   },
   {
-    id: 'agents',
+    id: 'resources',
     title: 'Agents',
     icon: <Users size={20} />,
     children: [
@@ -13,13 +13,13 @@ export default [
 		    id: 'list',
 		    title: 'Liste des agents',
         icon: <Circle size={12} />,
-		    navLink: '/resource/list'
+		    navLink: '/resources/list'
       },
       {
 		    id: 'sheet',
 		    title: 'Fiche agent',
         icon: <Circle size={12} />,
-		    navLink: '/resource/sheet'
+		    navLink: '/resources/sheet'
       }
     ]
   }

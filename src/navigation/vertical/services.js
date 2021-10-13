@@ -7,6 +7,7 @@ export default [
   {
     id: 'services',
     title: 'Pointages',
-    icon: <Clock size={20} />
+    icon: <Clock size={20} />,
+	navLink: '/services'
   }
 ]

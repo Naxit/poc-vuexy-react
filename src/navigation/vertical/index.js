@@ -1,5 +1,5 @@
 // ** Navigation sections imports
-import agents from './agents'
+import resources from './resources'
 import sites from './sites'
 import services from './services'
 
@@ -15,7 +15,7 @@ import chartsAndMaps from './charts-maps'
 
 // ** Merge & Export
 export default [
-	...agents,
+	...resources,
 	...sites,
 	...services,
 	...dashboards,
