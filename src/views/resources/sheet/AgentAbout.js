@@ -53,87 +53,71 @@ const AgentAbout = ({ selectedUser }) => {
                       {selectedUser !== null ? selectedUser.email : 'eleanor.aguilar@gmail.com'}
                     </CardText>
                   </div>
-                  <div className='d-flex flex-wrap align-items-center'>
-                    <Button.Ripple tag={Link} to={`/apps/user/edit/${selectedUser.id}`} color='primary'>
-                      Edit
-                    </Button.Ripple>
-                    <Button.Ripple className='ml-1' color='danger' outline>
-                      Delete
-                    </Button.Ripple>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='d-flex align-items-center user-total-numbers'>
-              <div className='d-flex align-items-center mr-2'>
-                <div className='color-box bg-light-primary'>
-                  <DollarSign className='text-primary' />
-                </div>
-                <div className='ml-1'>
-                  <h5 className='mb-0'>23.3k</h5>
-                  <small>Monthly Sales</small>
-                </div>
-              </div>
-              <div className='d-flex align-items-center'>
-                <div className='color-box bg-light-success'>
-                  <TrendingUp className='text-success' />
-                </div>
-                <div className='ml-1'>
-                  <h5 className='mb-0'>$99.87K</h5>
-                  <small>Annual Profit</small>
+
                 </div>
               </div>
             </div>
           </Col>
+
+
+
           <Col xl='6' lg='12' className='mt-2 mt-xl-0'>
             <div className='user-info-wrapper'>
               <div className='d-flex flex-wrap align-items-center'>
                 <div className='user-info-title'>
                   <User className='mr-1' size={14} />
                   <CardText tag='span' className='user-info-title font-weight-bold mb-0'>
-                    Username
+                    Matricule
                   </CardText>
                 </div>
                 <CardText className='mb-0'>
                   {selectedUser !== null ? selectedUser.username : 'eleanor.aguilar'}
                 </CardText>
               </div>
+
+			  
               <div className='d-flex flex-wrap align-items-center my-50'>
                 <div className='user-info-title'>
                   <Check className='mr-1' size={14} />
                   <CardText tag='span' className='user-info-title font-weight-bold mb-0'>
-                    Status
+                    Tél. / Mobile
                   </CardText>
                 </div>
                 <CardText className='text-capitalize mb-0'>
                   {selectedUser !== null ? selectedUser.status : 'Active'}
                 </CardText>
               </div>
+
+
               <div className='d-flex flex-wrap align-items-center my-50'>
                 <div className='user-info-title'>
                   <Star className='mr-1' size={14} />
                   <CardText tag='span' className='user-info-title font-weight-bold mb-0'>
-                    Role
+                    Email
                   </CardText>
                 </div>
                 <CardText className='text-capitalize mb-0'>
                   {selectedUser !== null ? selectedUser.role : 'Admin'}
                 </CardText>
               </div>
+
+
               <div className='d-flex flex-wrap align-items-center my-50'>
                 <div className='user-info-title'>
                   <Flag className='mr-1' size={14} />
                   <CardText tag='span' className='user-info-title font-weight-bold mb-0'>
-                    Country
+                    N° Sécurité Sociale
                   </CardText>
                 </div>
                 <CardText className='mb-0'>{selectedUser !== null ? selectedUser.country : 'England'}</CardText>
               </div>
+
+
               <div className='d-flex flex-wrap align-items-center'>
                 <div className='user-info-title'>
                   <Phone className='mr-1' size={14} />
                   <CardText tag='span' className='user-info-title font-weight-bold mb-0'>
-                    Contact
+                    Nationalité
                   </CardText>
                 </div>
                 <CardText className='mb-0'>{selectedUser !== null ? selectedUser.contact : '(123) 456-7890'}</CardText>

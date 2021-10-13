@@ -11,7 +11,9 @@ const SheetResources = () => {
   const [data, setData] = useState(null)
 
   useEffect(() => {
-    axios.get('/api/resources/agent', { id: 21 }).then(response => setData(response.data))
+    axios.get('/api/resources/agent', { id: 15 }).then(response => {
+		setData(response.data)
+	})
   }, [])
   return (
     <Fragment>
